@@ -1,0 +1,114 @@
+/* user area */
+
+.user {
+    padding: 25px 30px;
+}
+
+.user header,
+.user-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+:is(.user, .user-list) .content{
+    display: flex;
+    align-items: center;
+}
+.user header .content img{
+    width: 50px;
+    height: 50px;
+}
+
+:is(.user, .user-list) .details {
+    color: var(--third-color);
+    margin-left: 15px;
+}
+
+:is(.user, .user-list) .details span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.user header .logout {
+    font-size: 17px;
+    color: var(--secondary-color);
+    background: var(--third-color);
+    padding: 7px 15px;
+    border-radius: 5px;
+}
+
+.user .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    position: relative;
+}
+
+.user .search .text {
+    font-size: 18px;
+}
+
+.user .search input {
+    position: absolute;
+    width: calc(100% - 50px);
+    height: 42px;
+    font-size: 16px;
+    padding: 0 13px;
+    border: 1px solid var(--fifth-color);
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.user .search button {
+    width: 47px;
+    height: 42px;
+    background: var(--third-color);
+    color: var(--secondary-color);
+    border: none;
+    outline: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.user-list {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.user-list::-webkit-scrollbar {
+    width: 0;
+}
+
+.user-list a {
+    padding-right: 15px;
+    margin-bottom: 15px;
+    break-after: 10px;
+    border-bottom-color: #f1f1f1;
+}
+
+.user-list a:last-child {
+    border: none;
+    margin-bottom: 0;
+}
+
+.user-list a .content img {
+    width: 40px;
+    height: 40px;
+}
+.user-list a .content p {
+    color: var(--fourth-color);
+}
+
+.user-list a .status-dot {
+    font-size: 12px;
+    color: #468669;
+}
+
+.user-list a .status-dot.offline {
+    color: var(--fifth-color);
+}

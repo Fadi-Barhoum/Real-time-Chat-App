@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --primary-color: #f7f7f7;
+    --secondary-color: #fff;
+    --third-color: #000;
+    --fourth-color: #67676a;
+    --fifth-color: #ccc;
+
+    --first-shadow: rgba(0, 0, 0, 0.1);
+    --second-shadow: rgba(0, 0, 0, 0.5);
+    --third-shadow: rgb(0 0 0 / 5%);
+    --fourth-shadow: rgb(0 0 0 / 8%);
+}
+
+.dark-theme {
+    --primary-color: #f7f7f7;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--primary-color);
+    color: var(--third-color);
+}
+
+.wrapper {
+    background: var(--secondary-color);
+    border-radius: 16px;
+    box-shadow: 0 0 128px 0 var(--first-shadow),
+    0 32px 64px -48px var(--second-shadow);
+    width: 450px;
+}
+
+.wrapper img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Sign up */
+
+.form {
+    padding: 25px 30px;
+}
+
+.form header {
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.form form {
+    margin: 20px 0;
+}
+
+.form form .error-txt {
+    background: #f8d7da;
+    color: #721c24;
+    text-align: center;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+}
+.form form label {
+    margin-bottom: 2px;
+}
+.form form .field {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form form .name-details {
+    display: flex;
+}
+
+.form form .name-details .field:first-child {
+    margin-right: 10px;
+}
+
+.form form .name-details .field:last-child {
+    margin-left: 10px;
+}
+
+
+.form form .field input {
+    outline: 0;
+}
+
+.form form .input input {
+    height: 40px;
+    width: 100%;
+    border: 1px solid var(--fifth-color);
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.form form .image input{
+    font-size: 17px;
+}
+
+.form form .button input{
+    border: none;
+    height: 45px;
+    margin-top: 13px;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 5px;
+    background: var(--third-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.form form .field i {
+    position: absolute;
+    right: 15px;
+    top: 70%;
+    color: var(--fifth-color);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.form .link {
+    text-align: center;
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.form .link a {
+    color: var(--third-color);
+}
+
+.form .link a:hover {
+    text-decoration: underline;
+}
