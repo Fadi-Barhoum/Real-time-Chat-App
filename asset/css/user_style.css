@@ -61,18 +61,36 @@
     border: 1px solid var(--fifth-color);
     border-radius: 5px 0 0 5px;
     outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.user .search input.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .user .search button {
     width: 47px;
     height: 42px;
-    background: var(--third-color);
-    color: var(--secondary-color);
+    background: var(--secondary-color);
+    color: var(--third-color);
     border: none;
     outline: none;
     border-radius: 0 5px 5px 0;
     font-size: 15px;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.user .search button.active {
+    background: var(--third-color);
+    color: var(--secondary-color);
+}
+
+.user .search button.active i::before {
+    content: "\f00d";
 }
 
 .user-list {

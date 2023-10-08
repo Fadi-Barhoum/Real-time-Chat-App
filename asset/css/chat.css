@@ -93,7 +93,7 @@
     width: calc(100% - 58px);
     outline: 0;
     border-radius: 5px 0 0 5px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--fifth-color);
     padding: 0 13px;
     font-size: 17px;
 }

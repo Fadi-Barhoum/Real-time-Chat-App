@@ -70,10 +70,13 @@ body {
     border-radius: 5px;
     margin-bottom: 10px;
     border: 1px solid #f5c6cb;
+    display: none;
 }
+
 .form form label {
     margin-bottom: 2px;
 }
+
 .form form .field {
     display: flex;
     position: relative;
@@ -129,6 +132,11 @@ body {
     color: var(--fifth-color);
     transform: translateY(-50%);
     cursor: pointer;
+}
+
+.form form .field i.show::before {
+    color: var(--third-color);
+    content: '\f070';
 }
 
 .form .link {
