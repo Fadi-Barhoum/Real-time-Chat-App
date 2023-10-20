@@ -62,6 +62,10 @@ body {
     margin: 20px 0;
 }
 
+.form form label {
+    margin-bottom: 2px;
+}
+
 .form form .error-txt {
     background: #f8d7da;
     color: #721c24;
@@ -71,10 +75,6 @@ body {
     margin-bottom: 10px;
     border: 1px solid #f5c6cb;
     display: none;
-}
-
-.form form label {
-    margin-bottom: 2px;
 }
 
 .form form .field {

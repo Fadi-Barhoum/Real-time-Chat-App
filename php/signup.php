@@ -26,9 +26,8 @@
                         if(move_uploaded_file($img_tmp_name, "images/".$new_image_name)){
                             $status = "Active now";
                             $random_id = rand(time(), 10000000);
-
                             $sqlInsertUser = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
-                                                                    VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$password}', '{$new_image_name}', '{$status}')");
+                                                                    VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', MD5('{$password}'), '{$new_image_name}', '{$status}')");
                             if ($sqlInsertUser){
                                 $sqlCheckInsertUser = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
                                 if (mysqli_num_rows($sqlCheckInsertUser) > 0){

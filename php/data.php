@@ -7,14 +7,15 @@
                             ORDER BY msg_id DESC LIMIT 1";
         $lastMsg = mysqli_query($conn, $lastMsgQuery);
         $message = mysqli_fetch_assoc($lastMsg);
+        $you = "";
         if (mysqli_num_rows($lastMsg)){
             $result = $message['msg'];
+            ($outgoing_id == $message['outgoing_msg_id']) ? $you = "You: " : $you = "";
         }else{
             $result = "No message available";
         }
 
         (strlen($result) > 28) ? $msg = substr($result, 0, 25).'...' : $msg = $result;
-        ($outgoing_id == $message['outgoing_msg_id']) ? $you = "You: " : $you = "";
         ($row['status'] == "Offline now") ? $offline = "offline" : $offline = "";
 
         $output .= '

@@ -4,6 +4,7 @@
         header("location: user.php");
     }
 ?>
+
 <?php include_once "header.php"; ?>
 <body>
     <div class="wrapper">

@@ -1,8 +1,8 @@
-const
-    form = document.querySelector(".typing-area"),
-    inputField = form.querySelector(".input_field"),
-    sendBtn = form.querySelector("button"),
-    chatBox = document.querySelector(".chat-box");
+const 
+form = document.querySelector(".typing-area"),
+inputField = form.querySelector(".input_field"),
+sendBtn = form.querySelector("button"),
+chatBox = document.querySelector(".chat-box");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();

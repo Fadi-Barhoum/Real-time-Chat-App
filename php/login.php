@@ -6,7 +6,7 @@
 
     if (!empty($email) && !empty($password)){
         if (filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $sqlSearchEmail = mysqli_query($conn, "SELECT * FROM users WHERE `email` = '{$email}' AND `password` ='{$password}'");
+            $sqlSearchEmail = mysqli_query($conn, "SELECT * FROM users WHERE `email` = '{$email}' AND `password` = MD5('{$password}')");
             if (mysqli_num_rows($sqlSearchEmail) > 0){
                 $userInformation = mysqli_fetch_assoc($sqlSearchEmail);
                     $status = "Active now";

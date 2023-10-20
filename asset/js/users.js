@@ -1,6 +1,7 @@
-const searchBar = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
-const usersList = document.querySelector(".user .user-list");
+const 
+searchBar = document.querySelector(".search input"),
+searchBtn = document.querySelector(".search button"),
+usersList = document.querySelector(".user .user-list");
 
 searchBtn.addEventListener("click", ()=> {
     searchBar.classList.toggle("show");

@@ -12,14 +12,15 @@
     margin: 0 15px;
 }
 
-.chat-area header .back-icon {
-    font-size: 18px;
-    color: var(--third-color);
-}
 
 .chat-area header .details span{
     font-size: 18px;
     font-weight: 500;
+}
+
+.chat-area header .back-icon {
+    font-size: 18px;
+    color: var(--third-color);
 }
 
 .chat-box::-webkit-scrollbar {

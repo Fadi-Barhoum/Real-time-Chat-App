@@ -5,6 +5,7 @@
         $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
         $outgoing_id = mysqli_real_escape_string($conn, $_POST['outgoing_id']);
         $output = "";
+        
         $messagesQuery = "SELECT * FROM messages
                             LEFT JOIN users ON users.unique_id = messages.incoming_msg_id
                             WHERE (incoming_msg_id = {$incoming_id} AND outgoing_msg_id = {$outgoing_id})
