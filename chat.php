@@ -26,25 +26,17 @@
                 </div>
             </header>
             <div class="chat-box">
-                <div class="chat outgoing">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, sint?</p>
-                    </div>
-                </div>
-                <div class="chat incoming">
-                    <img src="asset/img/Fadi-Barhoum-profile.png" alt="">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, esse.</p>
-                    </div>
-                </div> 
+
             </div>
-            <form action="#" class="typing-area">
-                <input type="text" placeholder="Type a message here...">
+            <form action="#" class="typing-area" autocomplete="off">
+                <input type="text" name="outgoing_id" value=<?php echo $_SESSION['unique_id'] ?> hidden>
+                <input type="text" name="incoming_id" value=<?php echo $user_id ?> hidden>
+                <input type="text" class="input_field" name="message" placeholder="Type a message here...">
                 <button><i class="fab fa-telegram-plane"></i></button>
             </form>
         </section> 
     </div>
 
-    <script src="asset/js/script.js"></script>
+    <script src="asset/js/chat.js"></script>
 </body>
 </html>
