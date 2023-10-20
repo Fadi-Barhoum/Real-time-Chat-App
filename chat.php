@@ -1,23 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realtome Chat App</title>
-    <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="asset/css/chat.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="asset/js/script.js" defer></script>
-</head>
+<?php 
+    session_start();
+    if (!isset($_SESSION['unique_id'])){
+        header("location: login.php");
+    }
+?>
+<?php include_once "header.php"; ?>
 <body>
     <div class="wrapper">
         <section class="chat-area">
             <header>
-                <a href="" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-                <img src="asset/img/Fadi-Barhoum-profile.png" alt="">
+            <?php 
+                include_once "php/config.php";
+                $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+                $userInformationQuery = "SELECT * FROM users WHERE unique_id = {$user_id}";
+                $userInformation = mysqli_query($conn, $userInformationQuery);
+                if (mysqli_num_rows($userInformation) > 0){
+                    $row = mysqli_fetch_assoc($userInformation);
+                }
+            ?>
+                <a href="user.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+                <img src="php/images/<?php echo $row['img'];?>">
                 <div class="details">
-                    <span>Fadi Barhoum</span>
-                    <p>Active now</p>
+                    <span><?php echo $row['fname'] . " " . $row['lname']; ?></span>
+                    <p><?php echo $row['status']; ?></p>
                 </div>
             </header>
             <div class="chat-box">
@@ -39,5 +44,7 @@
             </form>
         </section> 
     </div>
+
+    <script src="asset/js/script.js"></script>
 </body>
 </html>

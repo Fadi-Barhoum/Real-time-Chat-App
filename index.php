@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realtome Chat App</title>
-    <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="asset/js/pass-show-hide.js" defer></script>
-    <script src="asset/js/signup.js" defer></script>
-</head>
+<?php include_once "header.php"; ?>
 <body>
     <div class="wrapper">
         <section class="form signup">
             <header>Realtime Chat App</header>
             <form action="#" enctype="multipart/form-data">
-                <div class="error-txt">This is an error message</div>
+                <div class="error-txt"></div>
                 <div class="name-details">
                     <div class="field input">
                         <label>First Name</label>
@@ -42,8 +32,11 @@
                     <input type="submit" value="Continue to Chat">
                 </div>
             </form>
-            <div class="link">Already signed up? <a href="#">Login now</a></div>
+            <div class="link">Already signed up? <a href="login.php">Login now</a></div>
         </section> 
     </div>
+
+    <script src="asset/js/pass-show-hide.js"></script>
+    <script src="asset/js/signup.js"></script>
 </body>
 </html>

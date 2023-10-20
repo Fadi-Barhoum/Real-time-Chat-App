@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realtome Chat App</title>
-    <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="asset/css/user_style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="asset/js/search-bar-show-hide.js" defer></script>
-</head>
+<?php 
+    session_start();
+    if (!isset($_SESSION['unique_id'])){
+        header("location: login.php");
+    }
+?>
+<?php include_once "header.php"; ?>
 <body>
     <div class="wrapper">
         <section class="user">
             <header>
+                <?php 
+                    include_once "php/config.php";
+                    $userInformationQuery = "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}";
+                    $userInformation = mysqli_query($conn, $userInformationQuery);
+                    if (mysqli_num_rows($userInformation) > 0){
+                        $row = mysqli_fetch_assoc($userInformation);
+                    }
+                ?>
                 <div class="content">
-                    <img src="asset/img/Fadi-Barhoum-profile.png" alt="">
+                    <img src="php/images/<?php echo $row['img'];?>">
                     <div class="details">
-                        <span>Fadi Barhoum</span>
-                        <p>Active now</p>
+                        <span><?php echo $row['fname'] . " " . $row['lname']; ?></span>
+                        <p><?php echo $row['status']; ?></p>
                     </div>
                 </div>
                 <a href="#" class="logout">Logout</a>
@@ -28,18 +32,11 @@
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="user-list">
-                <a href="">
-                    <div class="content">
-                        <img src="asset/img/Fadi-Barhoum-profile.png" alt="">
-                        <div class="details">
-                            <span>Fadi Barhoum</span>
-                            <p>This is test message</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
+                
             </div>
         </section> 
     </div>
+
+    <script src="asset/js/users.js"></script>
 </body>
 </html>

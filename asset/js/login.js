@@ -1,5 +1,5 @@
 const
-    form = document.querySelector(".signup form"),
+    form = document.querySelector(".login form"),
     continueBtn = form.querySelector(".button input"),
     errorText = form.querySelector(".error-txt");
 
@@ -9,7 +9,7 @@ form.addEventListener("submit", (e) => {
     
 continueBtn.addEventListener("click", () => {
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "./php/signup.php", true);
+    xhr.open("POST", "./php/login.php", true);
     xhr.onload = () => {
         if (xhr.readyState === XMLHttpRequest.DONE){
             let data = xhr.response;
